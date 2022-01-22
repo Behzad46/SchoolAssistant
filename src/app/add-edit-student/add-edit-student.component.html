@@ -1,0 +1,13 @@
+<div>
+    <input type="text"  [(ngModel)]="Name" placeholder="نام دانش آموز را وارد کنید">
+</div>
+<div>
+    <button type="button" (click)="addStudent()" *ngIf="Stu.Id==0">
+        Add
+    </button>
+</div>
+<div>
+    <button type="button" (click)="updateStudent()" *ngIf="Stu.Id!=0">
+        Update
+    </button>
+</div>

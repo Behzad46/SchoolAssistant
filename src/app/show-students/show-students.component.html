@@ -1,0 +1,121 @@
+<div>
+    <app-add-edit-students [Stus]="Stus" *ngIf="ActivatedAddEditStudents"></app-add-edit-students>
+</div>  
+<ul class="students" >
+    <li  *ngFor="let dataItem of StudentsList " >
+        <a  routerLink="/detail/{{dataItem.Id}}">
+            <span  class="badge">{{dataItem.Id}}</span>{{dataItem.Name}} 
+        </a>
+        <button class="edit_delete" type="button" (click)="editClick(dataItem)">
+            <svg  width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175l-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+              </svg>
+            </button>  
+            <button class="edit_delete" type="button" (click)="deleteClick(dataItem)">
+                <svg  width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                  </svg>
+            </button>
+            <button class="edit_delete" title="Student Grade" (click)="show('معدل: '+dataItem.Grade)">
+                <svg  width="1" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16"></svg>
+                ?</button>
+    </li>
+</ul>
+<button class="students" type="button" (click)="addClick()">
+    Add a Student
+</button>
+
+
+<div class="div">
+<table id="customers">
+    <thead>
+    <tr>
+        <th>Id No.</th>
+        <th>Persian Name</th>
+        <th>English Name</th>
+        <th>Grade</th>
+        <th>Date of Rolle</th>
+    </tr>
+</thead> 
+<tbody>
+    <tr *ngFor="let dataItem of StudentsList"  routerLink="/detail/{{dataItem.Id}}">
+        <td>{{dataItem.Id}}</td>
+        <td>{{dataItem.Name}}</td>
+        <td>{{dataItem.EnName|uppercase}}</td>
+        <td>{{dataItem.Grade}}</td>
+        <td>{{dataItem.DateOfJoining}}</td>
+        <td>
+            <button type="button" (click)="editClick(dataItem)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175l-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+              </svg>
+            </button>  
+        </td>
+        <td>
+            <button type="button" (click)="deleteClick(dataItem)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                  </svg>
+            </button>
+        </td>
+    </tr>
+</tbody> 
+  </table>
+</div>  
+    
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                <div>
+                    <input [(ngModel)]="StudentsIdFilter" (keyup)="FilterFn()" placeholder="Filter">
+                    <button type="botton" (click)="sortResult('Id',true)" >
+                          <svg  width="16" height="16" fill="currentColor" class="bi bi-arrow-up-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0z"/>
+                          </svg>                    </button>
+                    <button type="botton" (click)="sortResult('Id',false)" >
+                        <svg  width="16" height="16" fill="currentColor" class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z"/>
+                          </svg>                        
+                    </button>
+                    </div>
+                Id</th>
+            <th>
+                <div>
+                    <input [(ngModel)]="StudentsNameFilter" (keyup)="FilterFn()" placeholder="Filter">
+                    <button type="botton" (click)="sortResult('Name',true)" >
+                        <svg width="16" height="16" fill="currentColor" class="bi bi-arrow-up-square-fill" viewBox="0 0 16 16">
+                          <path d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0z"/>
+                        </svg>                    </button>
+                  <button type="botton" (click)="sortResult('Name',false)" >
+                      <svg  width="16" height="16" fill="currentColor" class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
+                          <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z"/>
+                        </svg>                        
+                  </button>
+              </div>
+                Name</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataItem of StudentsList">
+            <td>{{dataItem.Id}}</td>
+            <td>{{dataItem.Name}}</td>
+            <td>
+                <button type="button" (click)="editClick(dataItem)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175l-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                  </svg>
+                </button>  
+            </td>
+            <td>
+                <button type="button" (click)="deleteClick(dataItem)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                      </svg>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,26 @@
+<!--div id="search-component">
+    <h4>جسنوجوی دانش آموز</h4>
+    <input #searchBox Id="search-box" (keyup)="search(searchBox.value)"/>
+    <ul class="search-result">
+        <li *ngFor="let student of students$ | async">
+            <a routerLink="/detail/{{student.Id}}">
+                {{student.Name}}
+            </a>
+        </li>
+    </ul>
+</div-->
+
+<div style="position:absolute;top:65.4px;left:-25%;" id="search-component" dir="rtl">
+        <input type="search"  [(ngModel)]="StudentsNameFilter"  placeholder="جسنجوی دانش آموز ">
+        <svg style="cursor: pointer;vertical-align: middle;" (click)="FilterFn()" width="16" height="16"  viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>  
+    <ul *ngIf="ActivatedFilter" class="search-result">
+        <li   *ngFor="let dataItem of StudentsList">
+            <a routerLink="/detail/{{dataItem.Id}}">
+                {{dataItem.Name}}
+            </a>
+        </li>
+    </ul>
+</div>
+

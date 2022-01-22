@@ -1,0 +1,155 @@
+.login {
+    width: 400px;
+    margin: 16px auto;
+    font-size: 16px;
+  }
+  
+  .login-header,
+  .login p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  .login-triangle {
+    width: 0;
+    margin-right: auto;
+    margin-left: auto;
+    border: 12px solid transparent;
+    border-bottom-color: rgb(15, 66, 107);
+  }
+  
+  .login-header {
+    background: rgb(12, 77, 129);
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  
+  .login-container {
+    background: #ebebeb;
+    padding: 4px;
+  }
+  
+  .login p {
+    padding: 12px;
+  }
+  
+  .login input {
+    box-sizing: border-box;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 4px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+  }
+ 
+  .login input[type="email"],
+  .login input[type="password"] {
+    background: #fff;
+    border-color: #bbb;
+    color: #555;
+  }
+  
+  .login input[type="email"]:focus,
+  .login input[type="password"]:focus {
+    border-color: #888;
+  }
+  
+  .login input[type="submit"] {
+    background: rgb(1, 29, 51);
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .login input[type="submit"]:hover {
+    background: #17c;
+  }
+  
+  .login input[type="submit"]:focus {
+    border-color: #05a;
+  }
+  
+.has-error input[type="email"],
+.has-error input[type="text"],
+.has-error input[type="password"] {
+    border-color: rgb(216, 12, 12);
+    color: rgb(230, 14, 14);
+}
+
+      /* The Modal (background) */
+      .modal {
+        position: fixed; /* Stay in place */
+        z-index: 3; /* Sit on top */
+        padding-top: 120px; /* Location of the box */
+        left: 300;
+        top: 0;
+        width: 40%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+      }
+      
+      /* Modal Content */
+      .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        border: 1px solid #888;
+        width: 80%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 1s;
+        animation-name: animatetop;
+        animation-duration: 1s
+      }
+      
+      /* Add Animation */
+      @-webkit-keyframes animatetop {
+        from {top: -300px; opacity:0} 
+        to {top:0; opacity:1}
+      }
+      
+      @keyframes animatetop {
+        from {top: -300px; opacity:0}
+        to {top:0; opacity:1}
+      }
+      
+      /* The Close Button */
+      .close {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      
+      .modal-header {
+        padding: 2px 16px;
+        background-color: #956bbd;
+        color: white;
+      }
+      
+      .modal-body {
+          padding: 2px 16px;
+          text-align: center;
+        }
+      
+      .modal-footer {
+        padding: 2px 16px;
+        background-color: #5cb85c;
+        color: white;
+      }

@@ -1,0 +1,80 @@
+<div class="toolbar"  dir="rtl" >
+  <img
+    width="40"
+    src="http://localhost:9351/Photos/icons8-school-64.png"
+    />
+    <div *ngIf="l1on"><span> Wellcome:{{logiName}} {{logiFamily}} </span></div>
+    <div *ngIf="l1off"><span> Wellcome </span></div>
+  <div class="title"> 
+  <span>
+    School Assistant
+  </span>
+</div>
+    <a  (click)="onBack()" title="Back" style="position:absolute; cursor: pointer;left: 0;">
+      <img
+      width="40"
+      src="http://localhost:9351/Photos/icons8-back-arrow-80.png"/>
+      </a>
+</div>
+
+
+<div class="content" role="main">
+<header class="header">
+  <div style="position: absolute;top: 3px;right: 200;">
+    <a style="color: blue;" routerLink='/login'>Login  </a>
+    <a style="position: relative; top: 9px;" title="Login" routerLink='/login' >
+      <svg  width="30" height="30" fill="currentColor"  viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+        <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+      </svg>
+    </a>
+  </div>
+  <div style="position: absolute;top: 9px;right: 50;">
+    <a style="color: green;" routerLink='/membership'>Create Accont  </a>
+    <a style="position: relative;top: 5px;color: green;" title="Create Accont" routerLink='/membership' > 
+    <svg  width="25" height="25" fill="currentColor"  viewBox="0 0 16 16">
+      <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/>
+      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+    </svg>
+    </a>
+  </div>
+    <div class="dropdown">
+      <button class="dropbtn" onclick="myFunction($event)">Menu</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a routerLink='/exit'>Exit</a>
+        <a routerLink="/exit">Connect with us</a>
+        <div *ngIf="l2on"><a  routerLink='/students'>Students List</a></div>
+        <div *ngIf="l2off"><a>Students List</a></div>
+        <div *ngIf="l1on"><a  routerLink='/dashboard'>Top students</a></div>
+        <div *ngIf="l1off"><a>Top students</a></div>
+      </div>
+    </div>
+  </header>
+</div>  
+
+
+<!--<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+    </button>
+    <h1>School Assistant</h1>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav opened="true" mode="side">
+    <mat-nav-list>
+      <a mat-list-item>Home</a>
+      <a mat-list-item>Account</a>
+      <a mat-list-item>About us</a>
+      <a mat-list-item>Cotact Us</a>
+      <a mat-list-item>Help</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh;">
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>-->
+<router-outlet>
+</router-outlet>

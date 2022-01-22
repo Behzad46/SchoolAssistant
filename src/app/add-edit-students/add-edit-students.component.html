@@ -1,0 +1,52 @@
+<div id="myModal" class="modal" dir="rtl">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close" (click)="onClose()" >&times;</span>
+        <h2>{{ModalTitle}}</h2>
+      </div>
+      <div class="modal-body">
+        <div>
+            <div class="details">
+                <p>نام(فارسی):</p>
+                <input  class="fnt" [(ngModel)]="Name" placeholder="نام را واردکنید">
+        
+            </div>
+            <div class="details">
+                <p>نام(لاتین):</p>
+                <input  [(ngModel)]="EnName" placeholder="Enter English Name of Student">
+            </div>
+            <div class="details">
+                <p>نمره:</p>
+                <input  [(ngModel)]="Grade">
+            </div>
+            <div class="details">
+                <p>تاریخ ثبت نام:</p>
+                <input  type="date"  [(ngModel)]="DateOfJoining">
+            </div>
+            
+                <div>
+            </div>
+            <div>
+                <img [src]=PhotoFilePath  width="200" height="250" style="position: absolute;top: 18%;left: 3%;">
+                <input type="file" style="position: absolute;top: 90%;left: 0%;" (change)="upLoadPhoto($event)"/>
+            </div>
+            <p></p>
+            <div>
+                <button class="add-update" type="button" (click)="addStudents()" *ngIf="Stus.Id==0">
+                    اضافه
+                </button>
+            </div>
+            <div>
+                <button class="add-update" type="button" (click)="updateStudents()" *ngIf="Stus.Id!=0">
+                    ویرایش
+                </button>
+            </div>
+        </div> 
+      </div>
+      <!--div class="modal-footer">
+        <h3>Modal Footer</h3>
+      </div-->
+    </div>
+</div> 

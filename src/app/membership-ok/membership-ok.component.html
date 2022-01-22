@@ -1,0 +1,37 @@
+
+<div id="myModal" class="modal" dir="rtl" *ngIf="ActiveModal" >
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close"  (click)="onClose()" >&times;</span>
+        <h2 style="text-align: left;">فرم  تایید  <img
+            width="40"
+            title="ورود"
+            src="http://localhost:9351/Photos/icons8-badge-64.png"
+          />
+        </h2>
+      </div>
+      <div class="modal-body">
+        <div class="login" dir="ltr">
+            <form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
+          
+
+                <p [ngClass]="{ 'has-error': isSubmitted && formControls.confirm.errors }">
+                    <input type="text" placeholder="کد دریافتی را وارد کنید" formControlName="confirm">
+                </p>
+              
+                  <div *ngIf="isSubmitted && formControls.confirm.errors" class="help-block">
+                    <div *ngIf="formControls.confirm.errors.required" style="color: red;">وارد کردن کد اجباری است</div>
+                  </div>
+                
+                <p>
+                  <input type="submit"  value="تائید">
+                </p>
+              </form>
+            </div>
+      </div>
+    </div>
+  </div> 
+  <app-toolbar *ngFor="let dataItem of PasswordsList" [Name]="dataItem.Name" [Family]="dataItem.Family"></app-toolbar>
+  

@@ -1,0 +1,43 @@
+<div id="myModal" class="modal" dir="rtl" *ngIf="ActiveModal" >
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close"  (click)="onClose()" >&times;</span>
+        <h2 style="text-align: left;">Login<img
+            width="40"
+            title="login"
+            src="http://localhost:9351/Photos/Iconshock-Cms-User-login.ico"
+          />
+        </h2>
+      </div>
+      <div class="modal-body" >
+        <div class="login" dir="ltr">
+          <form [formGroup]="loginForm" class="login-container"  (ngSubmit)="login()">
+        
+            <p [ngClass]="{ 'has-error': isSubmitted && formControls.username.errors }">
+               <input type="text" placeholder="User Name" formControlName="username">
+            </p>
+            <div *ngIf="isSubmitted && formControls.username.errors" class="help-block">
+              <div *ngIf="formControls.username.errors.required" style="color: red;">Username is required</div>
+            </div>
+        
+            <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+              <input type="password" placeholder="Password" formControlName="password">
+            </p>
+        
+            <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+              <div *ngIf="formControls.password.errors.required" style="color: red;">Password is required</div>
+            </div>
+            <p *ngIf="ActiveInvalidUser" style="color: red;">Username or Password is wrong</p>
+            <p >
+              <input type="submit" value="Login" >
+            </p>
+            <p >
+              <input type="button" (click)="onHide()" routerLink="/membership" value="Create Accont" >
+            </p>
+          </form>
+        </div>
+    </div>
+    </div>
+</div> 
+<app-toolbar *ngFor="let dataItem of PasswordsList" [Name]="dataItem.Name" [Family]="dataItem.Family"></app-toolbar>

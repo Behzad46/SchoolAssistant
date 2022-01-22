@@ -1,0 +1,123 @@
+[class*='col-']{
+    float: left;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+[class*='col-']:last-of-type{
+    padding-right: 0px;
+}
+a{
+    text-decoration: none;
+}
+*, *:after, *:before{
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+h3{
+    text-align: center;
+    margin-bottom: 0;
+}
+h4{
+    position: relative;
+}
+.grid{
+    margin: 0;
+}
+.col-1-4{
+    width: 25%;
+}
+.module{
+    padding:20px;
+    text-align:center;
+    color: #eee;
+    max-height: 120px;
+    min-width: 120px;
+    background-color:rgb(144, 144, 196);
+    border-radius: 2px;
+}
+.module:hover{
+    background-color: rgb(100, 100, 63);
+    cursor: pointer;
+    color: #60d78b;
+}
+.grid-pad{
+    padding: 10px 0;
+}
+.grid-pad >[class*='col-']:last-of-type{
+    padding-right: 20px;
+}
+@media(max-width: 600px){
+    .module{
+        font-size: 10px;
+        max-height: 75px;
+    }
+}
+
+@media(max-width: 1024px){
+    .grid{
+        margin: 0;
+    }
+    .module{
+        min-width: 60px;
+    }
+}
+
+
+svg.material-icons {
+    height: 24px;
+    width: auto;
+  }
+
+  svg.material-icons:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  .card svg.material-icons path {
+    fill: #888;
+  }
+.card-container .card:not(.highlight-card) {
+    cursor: pointer;
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+  }
+
+  .card-container .card:not(.highlight-card):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .card {
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    height: 40px;
+    width: 200px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+
+  .card-container .card:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .card.card-small {
+    height: 16px;
+    width: 168px;
+  }
+  div .card{
+    font-size: 20px;
+}
+

@@ -1,0 +1,58 @@
+  
+  <div id="myModal" class="modal" dir="rtl" *ngIf="ActiveModal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close"  (click)="onClose()" >&times;</span>
+        <h2 style="text-align: left;">Create an Account  <img
+            width="40"
+            title="ورود"
+            src="http://localhost:9351/Photos/icons8-badge-64.png"
+          />
+        </h2>
+      </div>
+      <div class="modal-body">
+        <div class="login" dir="ltr">
+            <form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
+          
+              <p dir="ltr">
+                    <input type="text" placeholder="First Name" formControlName="name">
+              </p>
+              <p dir="ltr">
+                <input type="text" placeholder="Last Name" formControlName="family">
+              </p>
+
+              <p [ngClass]="{ 'has-error': isSubmitted && formControls.username.errors }">
+                <input type="text" placeholder="User Name" formControlName="username">
+              </p>
+          
+              <div *ngIf="isSubmitted && formControls.username.errors" class="help-block">
+                <div *ngIf="formControls.username.errors.required" style="color: red;">You have to enter Name</div>
+              </div>
+
+              <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors}">
+                <input type="email" placeholder="Email" formControlName="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$">
+              </p>
+              <div *ngIf="formControls.email.errors?.pattern" style="color: red;">Wrong Expersions</div>         
+              <div *ngIf="isSubmitted && formControls.email.errors " class="help-block">
+                <div *ngIf=" formControls.email.errors.required" style="color: red;">You have to enter Email</div>
+              </div>
+              
+              <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+                <input type="password" placeholder="Password" formControlName="password">
+              </p>
+          
+              <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+                <div *ngIf="formControls.password.errors.required" style="color: red;">You have to Enter password</div>
+              </div>
+          
+              <p>
+                <input type="submit"  value="Submit">
+              </p>
+            </form>
+          </div>
+      </div>
+    </div>
+</div> 
+<app-membership-ok *ngIf="ActiveModalOk"></app-membership-ok>

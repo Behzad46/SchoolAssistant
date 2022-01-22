@@ -1,0 +1,54 @@
+<div *ngIf="Active">
+<div style="position:absolute;top:170px;left:20%;">
+<h3>Top of Students</h3>
+<div class="card-container">
+    <a *ngFor="let dataItem of StudentList" class="card" routerLink="/detail/{{dataItem.Id}}">
+            <span>{{dataItem.Name}}</span>
+    </a>
+</div>
+
+<app-students-search></app-students-search>
+</div>
+<div style="position:relative;top:250px;cursor: pointer;">
+    <owl-carousel-o [options]="customOptions">
+ 
+        <ng-template carouselSlide *ngFor="let dataItem of StudentList" >
+            <img src="http://localhost:9351/Photos/{{dataItem.PhotoFileName}}" routerLink="/detail/{{dataItem.Id}}"
+             title="{{dataItem.Name}}">
+          </ng-template>
+    </owl-carousel-o>
+        <!--ng-template carouselSlide *ngFor="let slide of slidesStore" [id]="slide.id">
+          <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title">
+        </ng-template>
+       
+    </owl-carousel-o-->
+    <!--owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide>
+            <div class="slide">
+                <img src='http://localhost:9351/Photos/Carousel_1.jpg'>
+            </div>
+        </ng-template>
+        <ng-template carouselSlide>
+            <div class="slide">
+                <img src="http://localhost:9351/Photos/Carousel_2.jpg">
+            </div>
+        </ng-template>
+        <ng-template carouselSlide>
+            <div class="slide">
+                <img src="http://localhost:9351/Photos/Carousel_4.jpg">
+            </div>
+        </ng-template>
+        <ng-template carouselSlide>
+            <div class="slide">
+                <img src="http://localhost:9351/Photos/Carousel_5.jpg">
+            </div>
+        </ng-template>
+        <ng-template carouselSlide>
+            <div class="slide">
+                <img src="http://localhost:9351/Photos/qa.png">
+            </div>
+        </ng-template>
+    </owl-carousel-o-->
+    </div>
+    
+</div>
